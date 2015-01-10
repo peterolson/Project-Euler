@@ -12,7 +12,7 @@ exports.binarySearch = function (arr, n) {
 
 exports.choose = function (n, m) {
     var prod = 1;
-    for (var i = n; i > m; i--) prod *= i;
+    for (var i = n; i > (n - m) ; i--) prod *= i;
     return Math.round(prod / factorial(m));
 };
 
@@ -40,9 +40,17 @@ exports.isPalindrome = function (n) {
     return n + "" === (n + "").split("").reverse().join("");
 };
 
+exports.isPermutation = function (a, b) {
+    a += "";
+    b += "";
+    return a.split("").sort().join("") === b.split("").sort().join("");
+}
+
 exports.lcm = function (a, b) {
     return a * b / gcd(a, b);
 };
+
+var primeTable = {}, highestPrime = 2;
 
 exports.nthPrime = function (n) {
     var nPrimes = exports.nPrimes(n);
@@ -56,7 +64,11 @@ exports.nPrimes = function (n, primes) {
         for (var root = Math.sqrt(i), j = 0; primes[j] <= root; j++) {
             if (i % primes[j] === 0) root = 0;
         }
-        if (root) primes.push(i);
+        if (root) {
+            primes.push(i);
+            primeTable[i] = true;
+            highestPrime = i;
+        }
         i++;
     }
     return primes;
@@ -99,6 +111,7 @@ exports.primeFactors = function (n) {
 };
 
 exports.isPrime = function (n) {
+    if (n <= highestPrime) return primeTable[n] === true;
     return exports.primeFactors(n).length === 1;
 };
 
