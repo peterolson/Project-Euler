@@ -1,0 +1,153 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5746,        144]
+NotebookOptionsPosition[      5427,        128]
+NotebookOutlinePosition[      5774,        143]
+CellTagsIndexPosition[      5731,        140]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"limit", ":=", "50"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RightTriangles", "[", 
+    RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+   RowBox[{"(", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"d", "=", 
+      RowBox[{"GCD", "[", 
+       RowBox[{"x", ",", "y"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"a", "=", 
+      RowBox[{"x", "/", "d"}]}], ";", 
+     RowBox[{"b", "=", 
+      RowBox[{"y", "/", "d"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "\[Equal]", "0"}], "||", 
+        RowBox[{"y", "\[Equal]", "0"}]}], ",", 
+       RowBox[{"2", "*", "limit"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"2", "+", 
+        RowBox[{"2", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"0", "\[LessEqual]", 
+              RowBox[{"y", "+", "a"}], "\[LessEqual]", "limit"}], ",", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"0", "\[LessEqual]", 
+                RowBox[{"x", "-", "b"}], "\[LessEqual]", "limit"}], ",", 
+               RowBox[{"Floor", "[", 
+                RowBox[{"Min", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{"limit", "-", "y"}], ")"}], "/", "a"}], ",", 
+                  RowBox[{"x", "/", "b"}]}], "]"}], "]"}], ",", "0"}], "]"}], 
+             ",", "0"}], "]"}], "\[IndentingNewLine]", "+", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"0", "\[LessEqual]", 
+              RowBox[{"x", "+", "b"}], "\[LessEqual]", "limit"}], ",", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"0", "\[LessEqual]", 
+                RowBox[{"y", "-", "a"}], "\[LessEqual]", "limit"}], ",", 
+               RowBox[{"Floor", "[", 
+                RowBox[{"Min", "[", 
+                 RowBox[{
+                  RowBox[{"y", "/", "a"}], ",", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{"limit", "-", "x"}], ")"}], "/", "b"}]}], "]"}], 
+                "]"}], ",", "0"}], "]"}], ",", "0"}], "]"}]}], ")"}]}]}]}], 
+      "]"}]}], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"counts", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"RightTriangles", "@@", "#"}], "&"}], "/@", 
+    RowBox[{"Rest", "@", 
+     RowBox[{"Tuples", "[", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{"k", ",", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", "0", ",", "limit"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", "2", "}"}]}], "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Total", "@", "counts"}], "/", "2"}]}], "Input",
+ CellChangeTimes->{{3.629729433786254*^9, 3.6297294787138233`*^9}, {
+   3.6297295140498447`*^9, 3.629729515285915*^9}, 3.629729623362097*^9, {
+   3.629729701257552*^9, 3.629729703880702*^9}, {3.6297299593063116`*^9, 
+   3.629730117171341*^9}, {3.629730150427243*^9, 3.629730345299389*^9}, {
+   3.629730376981201*^9, 3.629730377276218*^9}, {3.6297304159974327`*^9, 
+   3.629730554301343*^9}, {3.6297306119496403`*^9, 3.6297306233332915`*^9}, {
+   3.6297307739549065`*^9, 3.6297311172755437`*^9}, {3.629731259481677*^9, 
+   3.6297313122666965`*^9}, {3.629731374731269*^9, 3.6297314167626734`*^9}, {
+   3.6297314693706827`*^9, 3.6297315245558386`*^9}, {3.629731575227737*^9, 
+   3.6297315912436533`*^9}, {3.6297316524831553`*^9, 
+   3.6297316528751783`*^9}, {3.6297317592272615`*^9, 3.629731770706918*^9}, {
+   3.629731976442685*^9, 3.6297319991379833`*^9}, {3.629732132883633*^9, 
+   3.629732139035985*^9}, {3.629732174356005*^9, 3.6297321838305473`*^9}, {
+   3.629732704433324*^9, 3.6297327441425953`*^9}, 3.629732917654519*^9, {
+   3.62973296154303*^9, 3.629733015463114*^9}, {3.6297330682241316`*^9, 
+   3.6297331525549545`*^9}, {3.629733254004758*^9, 3.629733276849064*^9}, {
+   3.6297333171813707`*^9, 3.62973331926049*^9}, {3.629733462332673*^9, 
+   3.6297335274603987`*^9}, {3.6297336130062914`*^9, 3.629733751493212*^9}, 
+   3.6297339295183945`*^9, {3.629734042890879*^9, 3.6297340557806163`*^9}, {
+   3.62973518020693*^9, 3.6297352294227448`*^9}, {3.6297353056471047`*^9, 
+   3.62973536466448*^9}, {3.629735580031799*^9, 3.629735580157806*^9}, {
+   3.629736189607664*^9, 3.629736189741672*^9}, 3.629736398604618*^9, {
+   3.629737043112482*^9, 3.6297370663098087`*^9}, 3.6297371122644377`*^9, {
+   3.629738372328509*^9, 3.629738425919574*^9}, {3.629738479991667*^9, 
+   3.629738561096306*^9}, {3.62973861676849*^9, 3.629738742195664*^9}, {
+   3.629738778282728*^9, 3.62973885069287*^9}, {3.62973892097989*^9, 
+   3.6297389598081107`*^9}}],
+
+Cell[BoxData["14234"], "Output",
+ CellChangeTimes->{{3.629738922361969*^9, 3.6297389923449717`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1235, 817},
+WindowMargins->{{130, Automatic}, {57, Automatic}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 4729, 100, 192, "Input"],
+Cell[5311, 124, 100, 1, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

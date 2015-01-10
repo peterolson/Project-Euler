@@ -1,0 +1,90 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2162,         80]
+NotebookOptionsPosition[      1848,         64]
+NotebookOutlinePosition[      2194,         79]
+CellTagsIndexPosition[      2151,         76]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"growTree", "[", "tree_", "]"}], ":=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"3", "#"}], "+", "1"}], ",", 
+        RowBox[{"#", "/", "2"}]}], "}"}], "&"}], "/@", "tree"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"isPowerOf2", "[", "n_", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tree", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"3", "k"}], "+", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"tree", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "\[Equal]", 
+     RowBox[{"2", "^", "n"}]}], "&&", 
+    RowBox[{"k", "\[NotEqual]", "0"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "k"}], "}"}], ",", "Integers"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.628110208253524*^9, 3.6281102615365715`*^9}, {
+  3.628112080008582*^9, 3.628112237179572*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"n", "\[Rule]", "68"}], ",", 
+    RowBox[{"k", "\[Rule]", "98382635059784275285"}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.6281121636753674`*^9, 3.6281122090149612`*^9}}]
+}, Open  ]]
+},
+WindowSize->{707, 515},
+WindowMargins->{{152, Automatic}, {Automatic, 47}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 998, 30, 92, "Input"],
+Cell[1580, 54, 252, 7, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

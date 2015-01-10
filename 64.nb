@@ -1,0 +1,70 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1681,         61]
+NotebookOptionsPosition[      1368,         45]
+NotebookOutlinePosition[      1713,         60]
+CellTagsIndexPosition[      1670,         57]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Length", "@", 
+  RowBox[{"Select", "[", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Length", "@", 
+       RowBox[{"Last", "@", 
+        RowBox[{"ContinuedFraction", "@", 
+         RowBox[{"Sqrt", "@", "n"}]}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"n", ",", "10000"}], "}"}]}], "]"}], ",", "OddQ"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6267173483145*^9, 3.6267173558039284`*^9}, {
+  3.6267174159773703`*^9, 3.6267174177864733`*^9}, {3.626717516363112*^9, 
+  3.626717625939379*^9}, {3.626717668147794*^9, 3.6267177190857067`*^9}}],
+
+Cell[BoxData["1322"], "Output",
+ CellChangeTimes->{
+  3.626717418329505*^9, {3.6267175240765533`*^9, 3.626717626838431*^9}, {
+   3.626717677443325*^9, 3.6267177511555414`*^9}}]
+}, Open  ]]
+},
+WindowSize->{707, 817},
+WindowMargins->{{24, Automatic}, {Automatic, 30}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 594, 15, 52, "Input"],
+Cell[1176, 39, 176, 3, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

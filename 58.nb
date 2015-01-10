@@ -1,0 +1,110 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3353,        101]
+NotebookOptionsPosition[      3038,         85]
+NotebookOutlinePosition[      3383,        100]
+CellTagsIndexPosition[      3340,         97]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Formula", " ", "from", " ", "OEIS", " ", "A200975"}], " ", "*)"}],
+   "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"diagonal", "[", "n_", "]"}], " ", ":=", " ", 
+     RowBox[{
+      RowBox[{"Floor", "[", 
+       RowBox[{"n", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"n", "+", "2"}], ")"}], "/", "4"}]}], "]"}], "+", 
+      RowBox[{"Floor", "[", 
+       RowBox[{
+        RowBox[{"Mod", "[", 
+         RowBox[{"n", ",", "4"}], "]"}], "/", "3"}], "]"}], " ", "+", " ", 
+      "1"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"primes", " ", "=", "8"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"entries", " ", "=", " ", "13"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"While", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"primes", "/", "entries"}], " ", "\[GreaterEqual]", "0.1"}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"primes", " ", "+=", 
+       RowBox[{"Length", "@", 
+        RowBox[{"Select", "[", 
+         RowBox[{
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"diagonal", "[", 
+             RowBox[{"entries", "+", "n"}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"n", ",", "4"}], "}"}]}], "]"}], ",", "PrimeQ"}], 
+         "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"entries", " ", "+=", " ", "4"}]}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"1", "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"entries", " ", "-", " ", "1"}], ")"}], "/", 
+     "2"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.626392134545308*^9, 3.6263921686532593`*^9}, {
+   3.6263922086765485`*^9, 3.626392271310131*^9}, 3.626392312012459*^9, {
+   3.6263923968533115`*^9, 3.626392500141219*^9}, 3.626393045709424*^9, {
+   3.6263930853366904`*^9, 3.6263930894769273`*^9}, {3.626393143078993*^9, 
+   3.6263934158175926`*^9}, {3.6263935184484625`*^9, 3.626393568616332*^9}, {
+   3.6263938853054457`*^9, 3.6263940753613167`*^9}, {3.6263942132582035`*^9, 
+   3.626394304361415*^9}, {3.6263943617736983`*^9, 3.6263943666389766`*^9}}],
+
+Cell[BoxData["26241"], "Output",
+ CellChangeTimes->{{3.6263933984205976`*^9, 3.626393409406226*^9}, 
+   3.6263935216376452`*^9, 3.6263938891366653`*^9, {3.6263939426127234`*^9, 
+   3.6263940646057014`*^9}, {3.626394214575279*^9, 3.626394306303526*^9}, {
+   3.626394363912821*^9, 3.6263943681480627`*^9}}]
+}, Open  ]]
+},
+WindowSize->{707, 817},
+WindowMargins->{{67, Automatic}, {63, Automatic}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 2136, 54, 172, "Input"],
+Cell[2718, 78, 304, 4, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

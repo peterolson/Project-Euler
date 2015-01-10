@@ -1,0 +1,197 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5702,        188]
+NotebookOptionsPosition[      5383,        172]
+NotebookOutlinePosition[      5730,        187]
+CellTagsIndexPosition[      5687,        184]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"triangles", " ", ":=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"n", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"n", "+", "1"}], ")"}], "/", "2"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "45", ",", "140"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"squares", " ", ":=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"n", "^", "2"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "32", ",", "99"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"pentagons", " ", ":=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"n", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"3", "n"}], "-", "1"}], ")"}], "/", "2"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "26", ",", "81"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"hexagons", " ", ":=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"n", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", "n"}], "\[Minus]", "1"}], ")"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "23", ",", "70"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"heptagons", " ", ":=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"n", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"5", "n"}], "\[Minus]", "3"}], ")"}], "/", "2"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "21", ",", "63"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"octagons", " ", ":=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"n", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"3", "n"}], "\[Minus]", "2"}], ")"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "19", ",", "58"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"combine", "[", 
+   RowBox[{"list1_", ",", "list2_"}], "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"FromDigits", "@", 
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"IntegerDigits", "@", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+       RowBox[{"IntegerDigits", "@", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}]}], "]"}]}], "&"}], "/@", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"Tuples", "[", 
+      RowBox[{"{", 
+       RowBox[{"list1", ",", "list2"}], "}"}], "]"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"IntegerDigits", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "[", 
+        RowBox[{"[", 
+         RowBox[{
+          RowBox[{"-", "2"}], ";;"}], "]"}], "]"}], "==", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"IntegerDigits", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "[", 
+        RowBox[{"[", 
+         RowBox[{";;", "2"}], "]"}], "]"}]}], "&"}]}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"types", " ", ":=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+   "heptagons", ",", "hexagons", ",", "pentagons", ",", "squares", ",", " ", 
+    "triangles"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"cycle", ":=", 
+  RowBox[{
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"DeleteDuplicates", "@", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Last", "@", "#"}], "&"}], "/@", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"FoldList", "[", 
+            RowBox[{"combine", ",", "octagons", ",", "#"}], "]"}], "&"}], "/@", 
+          RowBox[{"Permutations", "[", "types", "]"}]}], ")"}]}], "]"}]}], 
+     ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"IntegerDigits", "[", "#", "]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{";;", "2"}], "]"}], "]"}], "\[Equal]", 
+       RowBox[{
+        RowBox[{"IntegerDigits", "[", "#", "]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{
+          RowBox[{"-", "2"}], ";;"}], "]"}], "]"}]}], "&"}]}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Plus", "@@", 
+  RowBox[{"FromDigits", "/@", 
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"IntegerDigits", "@", "cycle"}], ",", "4"}], 
+    "]"}]}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQAGIQ/cjvuI8v62vHPTPFgkG0iZFGOIj2CnQE0zOnzawH
+0XcqT/aCaJ3vf6eA6HnF3ntB9PWr106C6GyF+RdAdIaC6DWwur3s90B0hYzq
+IxCtEBH4EkQXpGa9BetPX8XoB6SXTVTlAtECm3+Jg+jNT7ZFZABpPlvDfBDt
+d8+hFkQ7zL7dBKJVvpZPA9EdryRnguglJ5/MAdFP+Pnngug7X7p3g+htd0z2
+gOhnvi7fQPSj0l4w3SZjxZQJpF0exQuB6LYjpWIg+taO+WA64EyMDIiOmcsl
+B6L1GgzVQXTG2h+aIJqP64YRiFZ7JG8MosWz7C1A9IKrZ61BtJzeRGcQvepV
+jjuIjjpVHQGi0+96RoHt5c1OBdEKud9yQDQA9RGnlA==
+  "]],
+
+Cell[BoxData["28684"], "Output",
+ CellChangeTimes->{{3.626715978914175*^9, 3.6267160456089897`*^9}}]
+}, Open  ]]
+},
+WindowSize->{707, 594},
+WindowMargins->{{195, Automatic}, {Automatic, 146}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 4685, 144, 372, "Input"],
+Cell[5267, 168, 100, 1, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

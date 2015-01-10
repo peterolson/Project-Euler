@@ -1,0 +1,158 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5361,        149]
+NotebookOptionsPosition[      4884,        129]
+NotebookOutlinePosition[      5229,        144]
+CellTagsIndexPosition[      5186,        141]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"primeSquares", " ", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"primeCubes", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"primeFourths", " ", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p", "=", 
+   RowBox[{"Prime", "[", "1", "]"}]}], ";", 
+  RowBox[{"n", "=", "1"}], ";", 
+  RowBox[{"max", "=", 
+   RowBox[{"50", "*", 
+    RowBox[{"10", "^", "6"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"While", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "*", "p"}], "<", "max"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"AppendTo", "[", 
+     RowBox[{"primeSquares", ",", 
+      RowBox[{"p", "*", "p"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"p", "^", "3"}], "<", "max"}], ",", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"primeCubes", ",", 
+        RowBox[{"p", "^", "3"}]}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"p", "^", "4"}], "<", "max"}], ",", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"primeFourths", ",", 
+        RowBox[{"p", "^", "4"}]}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"n", "++"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"p", "=", 
+     RowBox[{"Prime", "[", "n", "]"}]}], ";"}]}], "\[IndentingNewLine]", 
+  "]"}], "\[IndentingNewLine]", "primeFourths"}], "Input",
+ CellChangeTimes->{{3.6296748138552866`*^9, 3.62967483821768*^9}, {
+  3.629674941105565*^9, 3.6296749490660205`*^9}, {3.6296750961364326`*^9, 
+  3.6296753935904455`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"AppendTo", "::", "rvalue"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(primeSquares\\)\[NoBreak] is not a \
+variable with a value, so its value cannot be changed. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/rvalue\\\", \
+ButtonNote -> \\\"AppendTo::rvalue\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.62967537216022*^9, 3.629675379141619*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"AppendTo", "::", "rvalue"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(primeSquares\\)\[NoBreak] is not a \
+variable with a value, so its value cannot be changed. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/rvalue\\\", \
+ButtonNote -> \\\"AppendTo::rvalue\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.62967537216022*^9, 3.629675379189622*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"AppendTo", "::", "rvalue"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(primeSquares\\)\[NoBreak] is not a \
+variable with a value, so its value cannot be changed. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/rvalue\\\", \
+ButtonNote -> \\\"AppendTo::rvalue\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.62967537216022*^9, 3.629675379237625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(AppendTo \
+:: rvalue\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during \
+this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.62967537216022*^9, 3.6296753792646265`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "16", ",", "81", ",", "625", ",", "2401", ",", "14641", ",", "28561", ",", 
+   "83521", ",", "130321", ",", "279841", ",", "707281", ",", "923521", ",", 
+   "1874161", ",", "2825761", ",", "3418801", ",", "4879681", ",", "7890481", 
+   ",", "12117361", ",", "13845841", ",", "20151121", ",", "25411681", ",", 
+   "28398241", ",", "38950081", ",", "47458321"}], "}"}]], "Output",
+ CellChangeTimes->{3.6296753792766266`*^9}]
+}, Open  ]]
+},
+WindowSize->{707, 817},
+WindowMargins->{{Automatic, 70}, {Automatic, 54}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1698, 45, 252, "Input"],
+Cell[2280, 69, 518, 10, 21, "Message"],
+Cell[2801, 81, 518, 10, 21, "Message"],
+Cell[3322, 93, 518, 10, 21, "Message"],
+Cell[3843, 105, 558, 11, 21, "Message"],
+Cell[4404, 118, 464, 8, 72, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
